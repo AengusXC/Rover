@@ -77,7 +77,7 @@ To detect whether the voice recognition function can work properly, we can open 
 <p align="center">
 <img src="./Images/Voice_setup2.jpg" width = "350" height ="350"alt="Voice_setup2"align="center">
 
-We can also detect it in the main LabVIEW code  [Rover_main.vi](https://github.com/AengusXC/Rover/blob/main/Labview_codes/Rover_main.vi). First change the path of the .wav files. And then run the program, if your voice is recognized, you will hear "Rover is activated" from your computer's microphone, otherwise you will hear "Voice recognition failed".
+We can also detect it in the main LabVIEW code [Rover_main.vi](https://github.com/AengusXC/Rover/blob/main/Labview_codes/Rover_main.vi). First change the path of the .wav files. And then run the program, if your voice is recognized, you will hear "Rover is activated" from your computer's microphone, otherwise you will hear "Voice recognition failed".
 <p align="center">
 <img src="./Images/wav_setup.jpg" width = "450" height ="150"alt="Voice_setup2"align="center">
 
@@ -165,7 +165,7 @@ For the machine vision module that added in the [Rover_mv](https://github.com/Ae
 
 ## Examples
 
-Before running the whole project, we need to make sure that each of our component can work properly. So first of all we need to check the status of motors, servo, sensors and peripheral devices. We can detect and adjust their status individually in relevant example code, but it's a little time-consumming. Remember that we used a case function in the main code for controlling these components, so we only need to adjust the code in the loop function in order to achieve relevant control and detection through serial port monitor in Arduino IDE. So we can directly change the code in the  [rover_control_sensor](https://github.com/AengusXC/Rover/tree/main/Arduino_codes/rover_control_sensors) part. Replace the loop function with the code given below:
+Before running the whole project, we need to make sure that each of our component can work properly. So first of all we need to check the status of motors, servo, sensors and peripheral devices. We can detect and adjust their status individually in relevant example code, but it's a little time-consumming. Remember that we used a case function in the main code for controlling these components, so we only need to adjust the code in the loop function in order to achieve relevant control and detection through serial port monitor in Arduino IDE. So we can directly change the code in the [rover_control_sensor](https://github.com/AengusXC/Rover/tree/main/Arduino_codes/rover_control_sensors) part. Replace the loop function with the code given below:
 ```C++
 void loop(void)
 {
@@ -292,7 +292,7 @@ void loop(void)
 ```
 Before uploading the code, if we use USB bus to connect with the DFRduino board, we need to disconnect the TX and RX of Bluetooth Module on the board so as to be able to upload the code successfully (If not, the TX, RX is occupied by the Bluetooth Module and code won't be uploaded properly). After uploaded the code, we can click on Tools > Serial Ports Monitor, we can see a line of strings "*ROVER is ready !*" is printed on the display monitor and RGB LED on the board turns on and shows green light. When we type in  *W*, the rover won't move, but if we type in *W1* or *W2* or *W3*, the rover will move forwards in different speed and the RGB LED turns into blue color. If we type in *S*, it will go backwards and RGB LED turns red, while type in *A* and *D* will makes the front wheels turn left and right respectively and RGB LED shows white light. By typing in *J* or *L*, the servo will decrease/increase 3 degree from 90 degree respectively each time, and RGB LED turns into yellow color. If we press *'K'*, the servo will turn back to 90 degree, and after that if we press *J* or *L* each time, the servo will turn to 0 degree and 180 degree respectively. If we type in *u*, we can get the data from ultrasonic sensor, the relevant distance information will be printed in the display monitor. While when we type in *t* and *p*, we can get the data of temperature and air pressure. For detecting the status of ESP32 Camera, we can refer to the <a href="#ESP32 camera">ESP32 camera</a> part as mentioned above.
 
-If the above situation can be satisfied, we can re-upload the original [rover_control_sensor](https://github.com/AengusXC/Rover/tree/main/Arduino_codes/rover_control_sensors) code to the DFRduino RoMeo, and then link the Bluetooth Module to the board. Open the main LabVIEW code  [Rover_main.vi](https://github.com/AengusXC/Rover/blob/main/Labview_codes/Rover_main.vi), choose the right Serial port and Camera port on the front panel and run the program.
+If the above situation can be satisfied, we can re-upload the original [rover_control_sensor](https://github.com/AengusXC/Rover/tree/main/Arduino_codes/rover_control_sensors) code to the DFRduino RoMeo, and then link the Bluetooth Module to the board. Open the main LabVIEW code [Rover_main.vi](https://github.com/AengusXC/Rover/blob/main/Labview_codes/Rover_main.vi), choose the right Serial port and Camera port on the front panel and run the program.
 <p align="center">
 <img src="./Images/rover_front_panel1.jpg" width = "750" height = "470" alt="rover_front_panel" align="center">
 
