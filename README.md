@@ -35,7 +35,7 @@ A remote controlled rover is usually a car-shaped robot which can be controlled 
 First we need to install the necessary software in our personal computer. For the Lower Computer System we will use Arduino IDE as the platform, which we can download here: [Arduino IDE download](https://www.arduino.cc/en/software). After we downloaded this software, we need to install some libraries for the future work. Arduino allows installation of third-party platform packages using Boards Manager. Here we need to configure the system so as to program the <a id="ESP32 camera">ESP32 camera</a>.
 - Start Arduino and open Preferences window. The link to use in the "Preferences" of Arduino IDE for ESP32 board is https://dl.espressif.com/dl/package_esp32_index.json
 - Open Boards Manager from Tools > Board menu and install esp32 platform
-- Select ESP32 board from Tools > Board menu after installation. Here we need to select "ESP32 Wrover Module". With Upload Speed of "921600", Flash Frequency of "80MHz", Flash Mode of "QIO" and Partition Scheme of "Huge APP".
+- Select ESP32 board from Tools > Board menu after installation. Here we need to select "ESP32 Wrover Module". With Upload Speed of "921600" (if you couldn't upload your code successfully, try to change this part into 115200), Flash Frequency of "80MHz", Flash Mode of "QIO" and Partition Scheme of "Huge APP".
 
 For uploading the code to the ESP32 Camera, here we can use Arduino UNO directly as the bridge to connect between the ESP32 Camera and the PC (If we don't have FTDI). Here is the process to configure the ESP32 Camera by using Arduino UNO:
 - Connect the GND and RESET port of the Arduino UNO with a jumper so as to ensure code won't upload to Arduino UNO but to ESP32 Camera.
